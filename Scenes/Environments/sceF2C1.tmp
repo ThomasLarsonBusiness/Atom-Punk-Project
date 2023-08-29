@@ -1,0 +1,258 @@
+[gd_scene load_steps=18 format=3 uid="uid://cx0npv0ak5sve"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/GameManager.gd" id="1_c6l20"]
+[ext_resource type="Script" path="res://Assets/Scripts/TaskManager.gd" id="1_h51np"]
+[ext_resource type="Script" path="res://Assets/Scripts/PlayerControls.gd" id="2_3ix46"]
+[ext_resource type="PackedScene" uid="uid://7wyne4f3wb8j" path="res://Scenes/Objects/Panel_Base.tscn" id="2_ydyur"]
+[ext_resource type="PackedScene" uid="uid://2i485uuhmhpx" path="res://Scenes/Objects/Task_1_Button.tscn" id="3_br6d0"]
+[ext_resource type="Material" uid="uid://cxc30xbcxg2ej" path="res://Assets/Materials/Objects/MAT_floor.tres" id="3_jr80s"]
+[ext_resource type="PackedScene" uid="uid://b8pksirc6sbct" path="res://Scenes/Objects/Task_2_Panel.tscn" id="7_2ydr6"]
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_px3eh"]
+
+[sub_resource type="Animation" id="Animation_c3ptn"]
+resource_name = "Forward_To_Leftr"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1.31951, 0.68302),
+"update": 0,
+"values": [Vector3(-0.174533, 1.5708, 0), Vector3(-0.174533, 3.14159, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_gnfp6"]
+resource_name = "Forward_To_Right"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1.27456, 0.659754),
+"update": 0,
+"values": [Vector3(-0.174533, 1.5708, 0), Vector3(-0.174533, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_1dy3r"]
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(0.659754, 1.31951),
+"update": 0,
+"values": [Vector3(-0.174533, 3.14159, 0), Vector3(-0.174533, 1.5708, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_dvbyf"]
+resource_name = "Left_To_Right"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(0.732043, 1.36604),
+"update": 0,
+"values": [Vector3(-0.174533, 3.14159, 0), Vector3(-0.174533, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_8b4dp"]
+resource_name = "Right_To_Center"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1.31951, 0.517632),
+"update": 0,
+"values": [Vector3(-0.174533, 0, 0), Vector3(-0.174533, 1.5708, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_1dgjt"]
+resource_name = "Right_To_Left"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1.27456, 0.757858),
+"update": 0,
+"values": [Vector3(-0.174533, 0, 0), Vector3(-0.174533, 3.14159, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fcjln"]
+_data = {
+"Forward_To_Left": SubResource("Animation_c3ptn"),
+"Forward_To_Right": SubResource("Animation_gnfp6"),
+"Left_To_Center": SubResource("Animation_1dy3r"),
+"Left_To_Right": SubResource("Animation_dvbyf"),
+"Right_To_Center": SubResource("Animation_8b4dp"),
+"Right_To_Left": SubResource("Animation_1dgjt")
+}
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_3ikld"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ouyea"]
+
+[node name="sce_reactor_room" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.10759e-05, 1.19209e-07, 0.010581)
+script = ExtResource("1_c6l20")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-4.37114e-08, -0.173648, 0.984808, 0, 0.984808, 0.173648, -1, 7.5904e-09, -4.30473e-08, 0, 2.175, 0)
+fov = 60.0
+script = ExtResource("2_3ix46")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Camera3D"]
+libraries = {
+"": SubResource("AnimationLibrary_px3eh"),
+"Player_Facing": SubResource("AnimationLibrary_fcjln")
+}
+
+[node name="Environment" type="Node3D" parent="."]
+script = ExtResource("1_h51np")
+
+[node name="Floor" type="MeshInstance3D" parent="Environment"]
+transform = Transform3D(-1.07115e-06, 0, -36.0987, 0, 0.999978, 0, 24.505, 0, -1.57792e-06, 0, 0, 0)
+material_override = ExtResource("3_jr80s")
+mesh = SubResource("PlaneMesh_3ikld")
+skeleton = NodePath("")
+
+[node name="Panel_Base_1" parent="Environment" instance=ExtResource("2_ydyur")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3.68452, 0.951903, -0.024)
+
+[node name="Task_1_Button_1" parent="Environment/Panel_Base_1" groups=["Task1 Buttons"] instance=ExtResource("3_br6d0")]
+transform = Transform3D(1, -1.84137e-08, -4.06773e-09, 1.84137e-08, 0.906941, 0.421257, -4.06773e-09, -0.421257, 0.906941, 1.40252, 0.600453, 0.388582)
+
+[node name="Task_1_Button_2" parent="Environment/Panel_Base_1" groups=["Task1 Buttons"] instance=ExtResource("3_br6d0")]
+transform = Transform3D(1, -1.84137e-08, -4.06773e-09, 1.84137e-08, 0.906941, 0.421257, -4.06773e-09, -0.421257, 0.906941, 1.40252, 0.381208, -0.0944066)
+
+[node name="Panel_Base_2" parent="Environment" instance=ExtResource("2_ydyur")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0839431, 0.951903, 3.63389)
+
+[node name="Task_1_Button_3" parent="Environment/Panel_Base_2" groups=["Task1 Buttons"] instance=ExtResource("3_br6d0")]
+transform = Transform3D(1, 0, 0, 0, 0.907044, 0.421036, 0, -0.421036, 0.907044, -0.24123, 0.591128, 0.364298)
+
+[node name="Task_1_Button_4" parent="Environment/Panel_Base_2" groups=["Task1 Buttons"] instance=ExtResource("3_br6d0")]
+transform = Transform3D(1, 0, 0, 0, 0.907044, 0.421036, 0, -0.421036, 0.907044, -0.591528, 0.432546, 0.0256209)
+
+[node name="Task_2_Panel_1" parent="Environment/Panel_Base_2" instance=ExtResource("7_2ydr6")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.211, 0.764993, 0.27315)
+
+[node name="Panel_Base_3" parent="Environment" instance=ExtResource("2_ydyur")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.0551331, 0.951903, -3.64983)
+
+[node name="Task_1_Button_5" parent="Environment/Panel_Base_3" groups=["Task1 Buttons"] instance=ExtResource("3_br6d0")]
+transform = Transform3D(1, 0, 0, 0, 0.907044, 0.421036, 0, -0.421036, 0.907044, -1.3256, 0.0721483, -0.762207)
+
+[node name="Task_1_Button_6" parent="Environment/Panel_Base_3" groups=["Task1 Buttons"] instance=ExtResource("3_br6d0")]
+transform = Transform3D(1, 0, 0, 0, 0.907044, 0.421036, 0, -0.421036, 0.907044, -0.8955, 0.0721483, -0.762207)
+
+[node name="Task_2_Panel_2" parent="Environment/Panel_Base_3" instance=ExtResource("7_2ydr6")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.16046, 0.764993, 0.23218)
+
+[node name="Wall 1" type="MeshInstance3D" parent="Environment"]
+transform = Transform3D(1, 0, 0, 0, 22.8533, 0, 0, 0, 48.6864, -35.5999, 9.8032, 0)
+mesh = SubResource("BoxMesh_ouyea")
+
+[node name="Wall 3" type="MeshInstance3D" parent="Environment"]
+transform = Transform3D(1, 0, -2.27374e-13, 0, 22.8533, 0, 0, 0, 48.6864, 35.9675, 9.8032, 0)
+mesh = SubResource("BoxMesh_ouyea")
+
+[node name="Wall 2" type="MeshInstance3D" parent="Environment"]
+transform = Transform3D(-4.37114e-08, 0, 72.119, 0, 22.8533, 0, -1, 0, -3.15242e-06, 0.317194, 9.8032, -23.9786)
+mesh = SubResource("BoxMesh_ouyea")
+
+[node name="Wall 4" type="MeshInstance3D" parent="Environment"]
+transform = Transform3D(-4.37114e-08, 0, 72.119, 0, 22.8533, 0, -1, 0, -3.15242e-06, 0.317194, 9.8032, 23.8928)
+mesh = SubResource("BoxMesh_ouyea")
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Timer" type="RichTextLabel" parent="UI"]
+layout_mode = 0
+offset_left = 10.0
+offset_right = 685.0
+offset_bottom = 155.0
+theme_override_font_sizes/normal_font_size = 100
+text = "Timer: "
+
+[node name="HeatBar" type="ProgressBar" parent="UI"]
+layout_mode = 0
+offset_left = 1213.0
+offset_top = 6.0
+offset_right = 1905.0
+offset_bottom = 163.0
+max_value = 60.0
+show_percentage = false
+
+[node name="End Game Header" type="RichTextLabel" parent="UI"]
+visible = false
+layout_mode = 0
+offset_left = 745.055
+offset_top = 399.855
+offset_right = 1174.06
+offset_bottom = 512.855
+theme_override_font_sizes/normal_font_size = 80
+scroll_active = false
+
+[node name="Exit Button" type="Button" parent="UI"]
+visible = false
+layout_mode = 0
+offset_left = 787.0
+offset_top = 734.0
+offset_right = 1103.0
+offset_bottom = 812.0
+theme_override_font_sizes/font_size = 40
+text = "Exit Game"
+
+[node name="Restart Button" type="Button" parent="UI"]
+visible = false
+layout_mode = 0
+offset_left = 788.0
+offset_top = 600.0
+offset_right = 1102.0
+offset_bottom = 678.0
+theme_override_font_sizes/font_size = 40
+text = "Restart Shift"
+
+[node name="Lighting" type="Node3D" parent="."]
+
+[node name="Temp_Panel2_light" type="OmniLight3D" parent="Lighting"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.38645, 1.2396, 2.78057)
+light_energy = 0.341
+
+[node name="Temp_Panel2_light2" type="OmniLight3D" parent="Lighting"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.40379, 1.2396, -2.90706)
+light_energy = 0.341
+
+[node name="Main_Light" type="DirectionalLight3D" parent="Lighting"]
+transform = Transform3D(0.796889, -2.64072e-08, 0.604126, -0.604126, -3.48331e-08, 0.796889, 0, -1, -4.37114e-08, 18.062, 39.316, -5.20351)
+light_angular_distance = 90.0
+
+[connection signal="pressed" from="UI/Exit Button" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="UI/Restart Button" to="." method="_on_restart_shift_pressed"]
+[connection signal="pressed" from="UI/Restart Button" to="Environment" method="_on_restart_button_pressed"]

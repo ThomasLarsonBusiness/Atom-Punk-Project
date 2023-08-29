@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dsl8ibdq85260"
+path="res://.godot/imported/T_Pipe_V01.obj-92d960555edd133253e2d274c68e058e.mesh"
+
+[deps]
+
+files=["res://.godot/imported/T_Pipe_V01.obj-92d960555edd133253e2d274c68e058e.mesh"]
+
+source_file="res://Assets/Models/Task/T_Pipe_V01.obj"
+dest_files=["res://.godot/imported/T_Pipe_V01.obj-92d960555edd133253e2d274c68e058e.mesh", "res://.godot/imported/T_Pipe_V01.obj-92d960555edd133253e2d274c68e058e.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

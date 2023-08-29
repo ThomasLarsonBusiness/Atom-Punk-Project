@@ -1,0 +1,125 @@
+[gd_scene load_steps=2 format=3 uid="uid://byghcq14helfb"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/Main_Menu.gd" id="1_5qney"]
+
+[node name="sce_main_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5qney")
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 0
+offset_left = 650.0
+offset_top = 200.0
+offset_right = 1282.0
+offset_bottom = 373.0
+theme_override_font_sizes/font_size = 140
+text = "TITLE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Play Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 846.0
+offset_top = 447.455
+offset_right = 1088.0
+offset_bottom = 527.454
+theme_override_font_sizes/font_size = 40
+text = "Play"
+
+[node name="Exit Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 846.0
+offset_top = 594.81
+offset_right = 1088.0
+offset_bottom = 674.809
+theme_override_font_sizes/font_size = 40
+text = "Exit"
+
+[node name="Difficulties" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 1214.0
+offset_top = 226.0
+offset_right = 1864.0
+offset_bottom = 1022.0
+
+[node name="Task 1 Difficulty" type="TextEdit" parent="Difficulties"]
+layout_mode = 0
+offset_left = 158.0
+offset_top = 234.0
+offset_right = 242.0
+offset_bottom = 332.0
+theme_override_font_sizes/font_size = 60
+placeholder_text = "10
+"
+
+[node name="Task 2 Difficulty" type="TextEdit" parent="Difficulties"]
+layout_mode = 0
+offset_left = 400.0
+offset_top = 234.0
+offset_right = 484.0
+offset_bottom = 338.0
+theme_override_font_sizes/font_size = 60
+placeholder_text = "10
+"
+
+[node name="Task 3 Difficulty" type="TextEdit" parent="Difficulties"]
+layout_mode = 0
+offset_left = 158.0
+offset_top = 398.0
+offset_right = 242.0
+offset_bottom = 496.0
+theme_override_font_sizes/font_size = 60
+placeholder_text = "10
+"
+
+[node name="Task 1" type="Label" parent="Difficulties"]
+layout_mode = 0
+offset_left = 130.0
+offset_top = 138.0
+offset_right = 281.0
+offset_bottom = 221.0
+theme_override_font_sizes/font_size = 40
+text = "Task 1"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Task 2" type="Label" parent="Difficulties"]
+layout_mode = 0
+offset_left = 367.395
+offset_top = 138.0
+offset_right = 518.395
+offset_bottom = 221.0
+theme_override_font_sizes/font_size = 40
+text = "Task 2"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Task 3" type="Label" parent="Difficulties"]
+layout_mode = 0
+offset_left = 130.0
+offset_top = 314.0
+offset_right = 281.0
+offset_bottom = 397.0
+theme_override_font_sizes/font_size = 40
+text = "Task 3"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Difficulties" type="Label" parent="Difficulties"]
+layout_mode = 0
+offset_left = 76.0
+offset_top = 14.0
+offset_right = 592.0
+offset_bottom = 154.0
+theme_override_font_sizes/font_size = 100
+text = "Difficulties"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Play Button" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="Exit Button" to="." method="_on_exit_button_pressed"]

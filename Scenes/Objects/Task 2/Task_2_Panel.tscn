@@ -1,0 +1,64 @@
+[gd_scene load_steps=6 format=3 uid="uid://b8pksirc6sbct"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/Task 2/Task2PanelFunctionality.gd" id="1_2hyhj"]
+[ext_resource type="ArrayMesh" uid="uid://cnvlph6djntlt" path="res://Assets/Models/Task/Slider_Base_V02.obj" id="1_kqxoh"]
+[ext_resource type="PackedScene" uid="uid://cy03bxuow6i4t" path="res://Scenes/Objects/Task 2/Task_2_Slider.tscn" id="3_emtvt"]
+[ext_resource type="PackedScene" uid="uid://dx8u4g1y0f2lk" path="res://Scenes/Objects/Task 2/Task_2_Goal.tscn" id="4_ixpvt"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_edq3t"]
+size = Vector3(0.00771517, 0.0197064, 0.0281159)
+
+[node name="Task_2_Panel" type="Node3D"]
+script = ExtResource("1_2hyhj")
+
+[node name="Panel_Base" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_kqxoh")
+
+[node name="Slider_1" parent="Panel_Base" instance=ExtResource("3_emtvt")]
+skeleton = NodePath("../..")
+
+[node name="Slider_1_Area" type="Area3D" parent="Panel_Base/Slider_1"]
+
+[node name="Slider_1_Goal_Collision" type="CollisionShape3D" parent="Panel_Base/Slider_1/Slider_1_Area"]
+transform = Transform3D(1, 3.34075e-22, 0, 3.34075e-22, 1, 0, 0, 0, 1, -5.38559e-10, -0.0123208, 9.8953e-10)
+shape = SubResource("BoxShape3D_edq3t")
+
+[node name="Slider_2" parent="Panel_Base" instance=ExtResource("3_emtvt")]
+transform = Transform3D(4.37114e-08, 1, -8.74228e-08, 1, -4.37114e-08, 0, -3.82137e-15, -8.74228e-08, -1, 0.0406196, 0, -0.000602975)
+skeleton = NodePath("../..")
+
+[node name="Slider_2_Area" type="Area3D" parent="Panel_Base/Slider_2"]
+transform = Transform3D(1, 3.34075e-22, 0, 3.34075e-22, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Slider_2_Goal_Collision" type="CollisionShape3D" parent="Panel_Base/Slider_2/Slider_2_Area"]
+transform = Transform3D(1, 3.34075e-22, 0, 3.34075e-22, 1, 0, 0, 0, 1, -5.38559e-10, -0.0123208, 9.8953e-10)
+shape = SubResource("BoxShape3D_edq3t")
+
+[node name="Slider_3" parent="Panel_Base" instance=ExtResource("3_emtvt")]
+transform = Transform3D(4.37114e-08, 1, -8.74228e-08, 1, -4.37114e-08, 0, -3.82137e-15, -8.74228e-08, -1, 0.041, 0, -0.225)
+skeleton = NodePath("../..")
+
+[node name="Slider_3_Area" type="Area3D" parent="Panel_Base/Slider_3"]
+
+[node name="Slider_3_Goal_Collision" type="CollisionShape3D" parent="Panel_Base/Slider_3/Slider_3_Area"]
+transform = Transform3D(1, 3.34075e-22, 0, 3.34075e-22, 1, 0, 0, 0, 1, -5.38559e-10, -0.0123208, 9.8953e-10)
+shape = SubResource("BoxShape3D_edq3t")
+
+[node name="Slider_1_Goal" parent="Panel_Base" instance=ExtResource("4_ixpvt")]
+transform = Transform3D(0.00272897, 0, 0, 0, 0.0868604, 0, 0, 0, 0.0360343, 0.028, 0, 0.198)
+
+[node name="Slider_2_Goal" parent="Panel_Base" instance=ExtResource("4_ixpvt")]
+transform = Transform3D(0.00272897, 0, 0, 0, 0.0868604, 0, 0, 0, 0.0360343, 0.028, 0, -0.026)
+
+[node name="Slider_3_Goal" parent="Panel_Base" instance=ExtResource("4_ixpvt")]
+transform = Transform3D(0.00272897, 0, 0, 0, 0.0868604, 0, 0, 0, 0.0360343, 0.028, 0, -0.25)
+
+[connection signal="task_success" from="Panel_Base/Slider_1" to="." method="_on_slider_1_task_success"]
+[connection signal="area_entered" from="Panel_Base/Slider_1/Slider_1_Area" to="." method="_on_slider_1_area_area_entered"]
+[connection signal="area_exited" from="Panel_Base/Slider_1/Slider_1_Area" to="." method="_on_slider_1_area_area_exited"]
+[connection signal="task_success" from="Panel_Base/Slider_2" to="." method="_on_slider_2_task_success"]
+[connection signal="area_entered" from="Panel_Base/Slider_2/Slider_2_Area" to="." method="_on_slider_2_area_area_entered"]
+[connection signal="area_exited" from="Panel_Base/Slider_2/Slider_2_Area" to="." method="_on_slider_2_area_area_exited"]
+[connection signal="task_success" from="Panel_Base/Slider_3" to="." method="_on_slider_3_task_success"]
+[connection signal="area_entered" from="Panel_Base/Slider_3/Slider_3_Area" to="." method="_on_slider_3_area_area_entered"]
+[connection signal="area_exited" from="Panel_Base/Slider_3/Slider_3_Area" to="." method="_on_slider_3_area_area_exited"]

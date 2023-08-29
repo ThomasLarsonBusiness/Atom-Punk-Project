@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://7wyne4f3wb8j"]
+
+[ext_resource type="ArrayMesh" uid="uid://xw5vs6rylql6" path="res://Assets/Models/Environmental/panel_base_V01.obj" id="1_xoipm"]
+[ext_resource type="Material" uid="uid://bycurp0p0sphh" path="res://Assets/Materials/Objects/MAT_Panels.tres" id="2_qbah8"]
+
+[node name="Panel_Base" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_xoipm")
+surface_material_override/0 = ExtResource("2_qbah8")

@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://dyo0r8566bo21"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/Task 3/Task3StraightPipe.gd" id="1_p6aeu"]
+[ext_resource type="ArrayMesh" uid="uid://bg3d2gopwoiea" path="res://Assets/Models/Task/Straight_Pipe_V01.obj" id="2_3sx4l"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lc10t"]
+size = Vector3(0.185055, 0.0725396, 0.181854)
+
+[node name="Task_3_StraightPipe" type="Node3D"]
+script = ExtResource("1_p6aeu")
+
+[node name="PipeMesh" type="MeshInstance3D" parent="."]
+mesh = ExtResource("2_3sx4l")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_lc10t")
+
+[connection signal="input_event" from="Area3D" to="." method="_on_area_3d_input_event"]

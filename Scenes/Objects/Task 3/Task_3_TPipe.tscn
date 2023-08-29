@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://grf2qr104ag8"]
+
+[ext_resource type="ArrayMesh" uid="uid://dsl8ibdq85260" path="res://Assets/Models/Task/T_Pipe_V01.obj" id="1_8onxx"]
+[ext_resource type="Script" path="res://Assets/Scripts/Task 3/Task3BentPipe.gd" id="1_gjfbv"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_m8xtg"]
+size = Vector3(0.187107, 0.0781954, 0.186107)
+
+[node name="Task_3_TPipe" type="Node3D"]
+script = ExtResource("1_gjfbv")
+
+[node name="PipeMesh" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_8onxx")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_m8xtg")
+
+[connection signal="input_event" from="Area3D" to="." method="_on_area_3d_input_event"]

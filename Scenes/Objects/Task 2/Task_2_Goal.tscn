@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://dx8u4g1y0f2lk"]
+
+[ext_resource type="Material" uid="uid://b1kff5wj3bk2s" path="res://Assets/Materials/Objects/MAT_task2_disabled.tres" id="1_88crb"]
+[ext_resource type="Script" path="res://Assets/Scripts/Task 2/Task2GoalFunctionality.gd" id="2_ak5cw"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_nugx7"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gi3nj"]
+size = Vector3(1, 0.10416, 1.57841)
+
+[node name="Slider_Goal" type="MeshInstance3D"]
+transform = Transform3D(0.00272897, 0, 0, 0, 0.0868604, 0, 0, 0, 0.0360343, 0.0278478, -0.0914652, 0.197864)
+mesh = SubResource("BoxMesh_nugx7")
+surface_material_override/0 = ExtResource("1_88crb")
+script = ExtResource("2_ak5cw")
+
+[node name="Goal_Area" type="Area3D" parent="."]
+
+[node name="Goal_Collision" type="CollisionShape3D" parent="Goal_Area"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.283855)
+shape = SubResource("BoxShape3D_gi3nj")

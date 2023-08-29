@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://be2flkm7yetrs"
+path="res://.godot/imported/task1_button_V01.obj-301e89bbe551b76a62e9b318242f702e.mesh"
+
+[deps]
+
+files=["res://.godot/imported/task1_button_V01.obj-301e89bbe551b76a62e9b318242f702e.mesh"]
+
+source_file="res://Assets/Models/Task/task1_button_V01.obj"
+dest_files=["res://.godot/imported/task1_button_V01.obj-301e89bbe551b76a62e9b318242f702e.mesh", "res://.godot/imported/task1_button_V01.obj-301e89bbe551b76a62e9b318242f702e.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

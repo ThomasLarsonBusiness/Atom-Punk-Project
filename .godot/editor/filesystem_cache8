@@ -1,0 +1,65 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1693240070
+export_presets.cfg::TextFile::-1::1692674803::0::1::::<><>::
+icon.svg::CompressedTexture2D::3943642890255591640::1689624942::1689624960::1::::<><>::
+::res://Assets/::1691516253
+::res://Assets/Materials/::1691516253
+::res://Assets/Materials/Objects/::1693097497
+MAT_floor.tres::StandardMaterial3D::6393059456917881373::1689986882::0::1::::<><>::
+MAT_Panels.tres::StandardMaterial3D::4076327212051737713::1690069082::0::1::::<><>::
+MAT_task1_button_Green.tres::StandardMaterial3D::1328368059047242889::1689961608::0::1::::<><>::
+MAT_task1_button_Red.tres::StandardMaterial3D::7913562820777354864::1690221346::0::1::::<><>::
+MAT_task1_disabled.tres::StandardMaterial3D::8464876256318943207::1693097497::0::1::::<><>::
+MAT_task2_disabled.tres::StandardMaterial3D::4232288519888487096::1693097497::0::1::::<><>::
+MAT_task2_goal_Red.tres::StandardMaterial3D::3608779811681577603::1692376214::0::1::::<><>::
+::res://Assets/Materials/UI/::1690066010
+::res://Assets/Models/::1692896967
+::res://Assets/Models/Environmental/::1692218262
+panel_base_V01.glb::PackedScene::5142201893091373149::1689818930::1689818932::1::::<><>::
+panel_base_V01.obj::Mesh::1661619719833221645::1689959478::1689959482::1::::<><>::
+::res://Assets/Models/Task/::1692896967
+Corner_Pipe_V01.obj::Mesh::7881720202601183955::1692896964::1692896967::1::::<><>::
+Slider_Base_V01.obj::Mesh::3669836065756636454::1692221218::1692221223::1::::<><>::
+Slider_Base_V02.obj::Mesh::5729343357046137453::1692290021::1692290022::1::::<><>::
+Slider_V01.obj::Mesh::5428705001064091540::1692289588::1692289588::1::::<><>::
+Straight_Pipe_V01.obj::Mesh::2865587027527553752::1692896964::1692896967::1::::<><>::
+task1_button_V01.glb::PackedScene::776812187803514037::1689958740::1689958744::1::::<><>::
+task1_button_V01.obj::Mesh::2723238031558970560::1689959250::1689959282::1::::<><>::
+T_Pipe_V01.obj::Mesh::8447387396901116771::1692896964::1692896967::1::::<><>::
+::res://Assets/Scripts/::1693240074
+GameManager.gd::GDScript::-1::1692646858::0::1::::<>Node3D<>::
+Game_Controller.gd::GDScript::-1::1692646751::0::1::::<>Node<>::
+Main_Menu.gd::GDScript::-1::1692646872::0::1::::<>Control<>::
+PlayerControls.gd::GDScript::-1::1690219692::0::1::::<>Camera3D<>::
+Task3BentPipe.gd::GDScript::-1::1693073497::0::1::::<>PipeBase<>::
+Task3Functionality.gd::GDScript::-1::1693239938::0::1::::<>Node3D<>::
+Task3PipeBase.gd::GDScript::-1::1693097534::0::1::::PipeBase<>Node3D<>::
+Task3StraightPipe.gd::GDScript::-1::1693097727::0::1::::<>PipeBase<>::
+TaskManager.gd::GDScript::-1::1693239911::0::1::::<>Node3D<>::
+::res://Assets/Scripts/Task 1/::1693240063
+Task1ButtonFunctionality.gd::GDScript::-1::1691855899::0::1::::<>Node3D<>::
+::res://Assets/Scripts/Task 2/::1693240070
+Task2GoalFunctionality.gd::GDScript::-1::1692377185::0::1::::<>MeshInstance3D<>::
+Task2PanelFunctionality.gd::GDScript::-1::1692899564::0::1::::<>Node3D<>::
+Task2SliderFunctionality.gd::GDScript::-1::1692476611::0::1::::<>MeshInstance3D<>::
+::res://Assets/Scripts/Task 3/::1693240074
+::res://Builds/::1692674862
+::res://Scenes/::1691516253
+::res://Scenes/Environments/::1693240052
+sce_main_game.tscn::PackedScene::1191951184724144503::1692899458::0::1::::<><>::uid://byghcq14helfb
+sce_main_menu.tscn::PackedScene::4083768669933080839::1692899458::0::1::::<><>::res://Assets/Scripts/Main_Menu.gd
+sce_reactor_room.tscn::PackedScene::6439611464352006246::1693240052::0::1::::<><>::res://Assets/Scripts/GameManager.gd<>res://Assets/Scripts/TaskManager.gd<>res://Assets/Scripts/PlayerControls.gd<>uid://7wyne4f3wb8j::::res://Scenes/Objects/Panel_Base.tscn<>uid://2i485uuhmhpx::::res://Scenes/Objects/Task 1/Task_1_Button.tscn<>uid://cxc30xbcxg2ej::::res://Assets/Materials/Objects/MAT_floor.tres<>uid://bfrqccvu7fnyb::::res://Scenes/Objects/Task 3/Task_3_Panel.tscn<>uid://b8pksirc6sbct::::res://Scenes/Objects/Task 2/Task_2_Panel.tscn
+::res://Scenes/Objects/::1693240050
+Panel_Base.tscn::PackedScene::2292939985311700287::1690156636::0::1::::<><>::uid://xw5vs6rylql6
+::res://Scenes/Objects/Task 1/::1693072368
+Task_1_Button.tscn::PackedScene::1913435131763577345::1693072368::0::1::::<><>::uid://be2flkm7yetrs
+::res://Scenes/Objects/Task 2/::1693240070
+Task_2_Goal.tscn::PackedScene::8842996404945694244::1692899676::0::1::::<><>::uid://b1kff5wj3bk2s
+Task_2_Panel.tscn::PackedScene::4734257950858501339::1693240070::0::1::::<><>::res://Assets/Scripts/Task 2/Task2PanelFunctionality.gd<>uid://cnvlph6djntlt::::res://Assets/Models/Task/Slider_Base_V02.obj<>uid://cy03bxuow6i4t::::res://Scenes/Objects/Task 2/Task_2_Slider.tscn<>uid://dx8u4g1y0f2lk::::res://Scenes/Objects/Task 2/Task_2_Goal.tscn
+Task_2_Slider.tscn::PackedScene::6510686159741705253::1692476742::0::1::::<><>::uid://cjlx8i3dxcee3
+::res://Scenes/Objects/Task 3/::1693240034
+Task_3_CornerPipe.tscn::PackedScene::8439457070364846716::1693097573::0::1::::<><>::res://Assets/Scripts/Task3BentPipe.gd<>uid://dkj71r6drbksp::::res://Assets/Models/Task/Corner_Pipe_V01.obj
+Task_3_Panel.tscn::PackedScene::2773434505613629005::1693240078::0::1::::<><>::res://Assets/Scripts/Task3Functionality.gd<>uid://dyo0r8566bo21::::res://Scenes/Objects/Task 3/Task_3_StraightPipe.tscn<>uid://dsieviog38ut5::::res://Scenes/Objects/Task 3/Task_3_CornerPipe.tscn<>uid://grf2qr104ag8::::res://Scenes/Objects/Task 3/Task_3_TPipe.tscn
+Task_3_StraightPipe.tscn::PackedScene::8874245651329130304::1693153189::0::1::::<><>::res://Assets/Scripts/Task3StraightPipe.gd<>uid://bg3d2gopwoiea::::res://Assets/Models/Task/Straight_Pipe_V01.obj
+Task_3_TPipe.tscn::PackedScene::456580152897621861::1693097573::0::1::::<><>::uid://dsl8ibdq85260::::res://Assets/Models/Task/T_Pipe_V01.obj<>res://Assets/Scripts/Task3BentPipe.gd
+::res://Scenes/Player/::1689818308

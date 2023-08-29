@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cnvlph6djntlt"
+path="res://.godot/imported/Slider_Base_V02.obj-60e431252743b5875089d6d0ef700c63.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Slider_Base_V02.obj-60e431252743b5875089d6d0ef700c63.mesh"]
+
+source_file="res://Assets/Models/Task/Slider_Base_V02.obj"
+dest_files=["res://.godot/imported/Slider_Base_V02.obj-60e431252743b5875089d6d0ef700c63.mesh", "res://.godot/imported/Slider_Base_V02.obj-60e431252743b5875089d6d0ef700c63.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
