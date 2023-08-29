@@ -10,6 +10,7 @@ var red_material = load("res://Assets/Materials/Objects/MAT_task1_button_Red.tre
 var initial_basis
 var initial_rotation
 var enabled = false
+var correct_rotation : bool = true
 var rotation_amount : float = 0.0
 const rotation_axis = Vector3(0,1,0)
 
@@ -25,6 +26,7 @@ func fix_pipe():
 	$PipeMesh.set("surface_material_override/0", green_material)
 
 func fail_pipe():
+	correct_rotation = false
 	enabled = true
 	rotation_amount = rng.randi_range(1,3) * (PI/2)
 	transform.basis = transform.basis.rotated(rotation_axis, rotation_amount)

@@ -205,11 +205,12 @@ func task3_trigger():
 	task3_failed_pipes = task3_pipes_to_fail
 	task3_in_progress = true
 
-func task3_update():
+func task3_update(amount : int):
 	if task3_in_progress:
-		task3_failed_pipes -= 1
+		task3_failed_pipes += amount
 		if task3_failed_pipes == 0:
 			task3_in_progress = false
+			task3_panel.reset()
 			task3_cooldown = rng.randf_range(task3_cooldown_min, task3_cooldown_max)
 
 # Helper Functions
