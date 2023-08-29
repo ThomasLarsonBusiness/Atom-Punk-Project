@@ -8,3 +8,5 @@ res://Assets/Scripts/Task 3/Task3BentPipe.gd
 res://Scenes/Environments/sce_reactor_room.tscn
 res://Scenes/Environments/sce_main_menu.tscn
 res://Scenes/Environments/sce_main_game.tscn
+res://Scenes/Objects/Task 1/Task_1_Button.tscn
+res://Assets/Scripts/Task 1/Task1ButtonFunctionality.gd

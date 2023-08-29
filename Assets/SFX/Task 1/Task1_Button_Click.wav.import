@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b2mf2qqv458iw"
+path="res://.godot/imported/Task1_Button_Click.wav-9a595fa841b0f333968f26ca2c70d260.sample"
+
+[deps]
+
+source_file="res://Assets/SFX/Task 1/Task1_Button_Click.wav"
+dest_files=["res://.godot/imported/Task1_Button_Click.wav-9a595fa841b0f333968f26ca2c70d260.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
