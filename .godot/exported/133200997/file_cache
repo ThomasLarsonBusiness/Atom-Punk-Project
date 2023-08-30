@@ -2,14 +2,18 @@ res://Assets/Materials/Objects/MAT_floor.tres::19609eb032be2d90050fcfaa90046558:
 res://Assets/Materials/Objects/MAT_Panels.tres::8fd3ac3e680134222099d90dffc9d9bb::1690069082::res://.godot/exported/133200997/export-4707627feb21ef3e4bfa7054ab7d9172-MAT_Panels.res
 res://Assets/Materials/Objects/MAT_task1_button_Green.tres::c841afd199507ee1db3f53ace1d79ca1::1689961608::res://.godot/exported/133200997/export-73d163bc8c6cc1902e682988ee78e3c9-MAT_task1_button_Green.res
 res://Assets/Materials/Objects/MAT_task1_button_Red.tres::3c5c1a7789b2e8ce16fb053e90b6c8fe::1690221346::res://.godot/exported/133200997/export-02f57c6e169dfcdf6b9c704bd2ec9f1a-MAT_task1_button_Red.res
-res://Scenes/Environments/sce_reactor_room.tscn::b882aaa117fed1af15b6c60c8d1666f3::1692654249::res://.godot/exported/133200997/export-81fe3d87ef2660434b48197bb1ffde9b-sce_reactor_room.scn
+res://Scenes/Environments/sce_reactor_room.tscn::3e95df401d3776c5655c2be3785edd48::1693334907::res://.godot/exported/133200997/export-81fe3d87ef2660434b48197bb1ffde9b-sce_reactor_room.scn
 res://Scenes/Objects/Panel_Base.tscn::4ab39998af207b2710ea4ef675b1b9be::1690156636::res://.godot/exported/133200997/export-25c20befb32b766b6f5fa6f89cb47b35-Panel_Base.scn
-res://Scenes/Objects/Task_1_Button.tscn::05c33e17b8fbd41f5c5d2267235ca861::1692476742::res://.godot/exported/133200997/export-e08adae1174a41a3692429fdd39ac149-Task_1_Button.scn
-res://Assets/Materials/Objects/MAT_task1_disabled.tres::051e704dae2320d9ae76ea544d252895::1692289603::res://.godot/exported/133200997/export-bb218dd9138f08246d25ad485f488d47-MAT_task1_disabled.res
-res://Assets/Materials/Objects/MAT_task2_disabled.tres::e4ee209b25c4135e10b9d630697c4de1::1692378206::res://.godot/exported/133200997/export-2cd869919e50e272aeb5a842badb9c4d-MAT_task2_disabled.res
+res://Assets/Materials/Objects/MAT_task1_disabled.tres::051e704dae2320d9ae76ea544d252895::1693328482::res://.godot/exported/133200997/export-bb218dd9138f08246d25ad485f488d47-MAT_task1_disabled.res
+res://Assets/Materials/Objects/MAT_task2_disabled.tres::e4ee209b25c4135e10b9d630697c4de1::1693328482::res://.godot/exported/133200997/export-2cd869919e50e272aeb5a842badb9c4d-MAT_task2_disabled.res
 res://Assets/Materials/Objects/MAT_task2_goal_Red.tres::165ed61330b90b04f927e011184ec70a::1692376214::res://.godot/exported/133200997/export-7d32e389d2715021604e6d1694e03970-MAT_task2_goal_Red.res
-res://Scenes/Objects/Task_2_Goal.tscn::1fe9794908ec85c5b5eb2898fd15933d::1692476742::res://.godot/exported/133200997/export-e409d3359f08b07e0beb810263ac21ca-Task_2_Goal.scn
-res://Scenes/Objects/Task_2_Panel.tscn::c553f9d3ca5926cf0ec554a12f02b147::1692476742::res://.godot/exported/133200997/export-508cc757fa79eecaee25d00811669a42-Task_2_Panel.scn
-res://Scenes/Objects/Task_2_Slider.tscn::3e7de6dddf8b5183730eec59d4e18010::1692476742::res://.godot/exported/133200997/export-ef0466a74d2bf4176bc2cb68b70df400-Task_2_Slider.scn
-res://Scenes/Environments/sce_main_game.tscn::e00442113f893473d06c00cf3c9b3d56::1692654249::res://.godot/exported/133200997/export-d98424ecf91cc3acc524000d2d73dc5e-sce_main_game.scn
-res://Scenes/Environments/sce_main_menu.tscn::66e247124ae24f6f6647fa21fe0cfb14::1692654249::res://.godot/exported/133200997/export-9b21ce5ae1e9e49e64157894205a8516-sce_main_menu.scn
+res://Scenes/Environments/sce_main_game.tscn::a777267b1733e861ea972891d8eb55cf::1693334907::res://.godot/exported/133200997/export-d98424ecf91cc3acc524000d2d73dc5e-sce_main_game.scn
+res://Scenes/Environments/sce_main_menu.tscn::1901a649561c573c4f1a190775af305a::1693334907::res://.godot/exported/133200997/export-9b21ce5ae1e9e49e64157894205a8516-sce_main_menu.scn
+res://Scenes/Objects/Task 1/Task_1_Button.tscn::cf5fa1dba10a548204d4cd0b26a79f85::1693334907::res://.godot/exported/133200997/export-2162ab78b976023918edd9f5865d1840-Task_1_Button.scn
+res://Scenes/Objects/Task 2/Task_2_Goal.tscn::72bd6a7367e1a917f545719dca357040::1693242610::res://.godot/exported/133200997/export-e2b1e2dd8d1e0f4ad815d7a06125f6e8-Task_2_Goal.scn
+res://Scenes/Objects/Task 2/Task_2_Panel.tscn::850c56ec75a8171c11365e82c2cfbbf2::1693240721::res://.godot/exported/133200997/export-641381706e4986934c911600b525df74-Task_2_Panel.scn
+res://Scenes/Objects/Task 2/Task_2_Slider.tscn::c312bf57f3cc39430228054cd44abffe::1693240696::res://.godot/exported/133200997/export-b24cecc6eb6d24d5d409e6afad94e397-Task_2_Slider.scn
+res://Scenes/Objects/Task 3/Task_3_CornerPipe.tscn::20f3069a71cb21ad32a2e017cea0a642::1693242686::res://.godot/exported/133200997/export-e6279c1aa18992c7af16c7fb0e956bdb-Task_3_CornerPipe.scn
+res://Scenes/Objects/Task 3/Task_3_Panel.tscn::a32fd474cf828bdce7e7c97ea707e4da::1693334907::res://.godot/exported/133200997/export-9daa186aad6a2e5f2da7278c0fb6d00f-Task_3_Panel.scn
+res://Scenes/Objects/Task 3/Task_3_StraightPipe.tscn::9699786ab0ac026204bf073056354899::1693242692::res://.godot/exported/133200997/export-bacf01c66a32b651f6f9115d13569361-Task_3_StraightPipe.scn
+res://Scenes/Objects/Task 3/Task_3_TPipe.tscn::c2f4303137797ff608bd61e330249789::1693243207::res://.godot/exported/133200997/export-3832464807457b7e8c4889737e9cada3-Task_3_TPipe.scn
