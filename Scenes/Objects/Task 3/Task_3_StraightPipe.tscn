@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dyo0r8566bo21"]
+[gd_scene load_steps=5 format=3 uid="uid://dyo0r8566bo21"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/Task 3/Task3StraightPipe.gd" id="1_p6aeu"]
 [ext_resource type="ArrayMesh" uid="uid://bg3d2gopwoiea" path="res://Assets/Models/Task/Straight_Pipe_V01.obj" id="2_3sx4l"]
+[ext_resource type="Material" uid="uid://dsupjme06mpfr" path="res://Assets/Materials/Objects/MAT_task1_disabled.tres" id="3_unobi"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lc10t"]
 size = Vector3(0.185055, 0.0725396, 0.181854)
@@ -11,6 +12,7 @@ script = ExtResource("1_p6aeu")
 
 [node name="PipeMesh" type="MeshInstance3D" parent="."]
 mesh = ExtResource("2_3sx4l")
+surface_material_override/0 = ExtResource("3_unobi")
 
 [node name="Area3D" type="Area3D" parent="."]
 

@@ -1,2 +1,3 @@
+AudioStreamWAV
 StandardMaterial3D
 CanvasItemMaterial

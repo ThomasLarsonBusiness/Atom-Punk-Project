@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://grf2qr104ag8"]
+[gd_scene load_steps=5 format=3 uid="uid://grf2qr104ag8"]
 
 [ext_resource type="ArrayMesh" uid="uid://dsl8ibdq85260" path="res://Assets/Models/Task/T_Pipe_V01.obj" id="1_8onxx"]
 [ext_resource type="Script" path="res://Assets/Scripts/Task 3/Task3BentPipe.gd" id="1_gjfbv"]
+[ext_resource type="Material" uid="uid://dsupjme06mpfr" path="res://Assets/Materials/Objects/MAT_task1_disabled.tres" id="3_ph1ae"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_m8xtg"]
 size = Vector3(0.187107, 0.0781954, 0.186107)
@@ -11,6 +12,7 @@ script = ExtResource("1_gjfbv")
 
 [node name="PipeMesh" type="MeshInstance3D" parent="."]
 mesh = ExtResource("1_8onxx")
+surface_material_override/0 = ExtResource("3_ph1ae")
 
 [node name="Area3D" type="Area3D" parent="."]
 

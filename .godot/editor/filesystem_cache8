@@ -1,6 +1,7 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1693334901
-export_presets.cfg::TextFile::-1::1692674803::0::1::::<><>::
+::res://::1693531040
+default_bus_layout.tres::AudioBusLayout::1821384075145215951::1693425924::0::1::::<><>::
+export_presets.cfg::TextFile::-1::1693427938::0::1::::<><>::
 icon.svg::CompressedTexture2D::3943642890255591640::1689624942::1689624960::1::::<><>::
 ::res://Assets/::1693334510
 ::res://Assets/Materials/::1691516253
@@ -38,31 +39,31 @@ Task1ButtonFunctionality.gd::GDScript::-1::1693334773::0::1::::<>Node3D<>::
 Task2GoalFunctionality.gd::GDScript::-1::1692377185::0::1::::<>MeshInstance3D<>::
 Task2PanelFunctionality.gd::GDScript::-1::1692899564::0::1::::<>Node3D<>::
 Task2SliderFunctionality.gd::GDScript::-1::1692476611::0::1::::<>MeshInstance3D<>::
-::res://Assets/Scripts/Task 3/::1693329035
-Task3BentPipe.gd::GDScript::-1::1693328829::0::1::::<>PipeBase<>::
+::res://Assets/Scripts/Task 3/::1693427838
+Task3BentPipe.gd::GDScript::-1::1693427803::0::1::::<>PipeBase<>::
 Task3Functionality.gd::GDScript::-1::1693256123::0::1::::<>Node3D<>::
 Task3PipeBase.gd::GDScript::-1::1693329035::0::1::::PipeBase<>Node3D<>::
-Task3StraightPipe.gd::GDScript::-1::1693328614::0::1::::<>PipeBase<>::
-::res://Assets/SFX/::1693334516
-::res://Assets/SFX/Task 1/::1693334901
-Task1_Button_Click.wav::AudioStreamWAV::4306644662452545418::1693334898::1693334901::1::::<><>::
-::res://Builds/::1692674862
+Task3StraightPipe.gd::GDScript::-1::1693427838::0::1::::<>PipeBase<>::
+::res://Assets/SFX/::1693425712
+::res://Assets/SFX/Task 1/::1693430060
+Task1_Button_Click.wav::AudioStreamWAV::8718763904758222867::1693334877::1693430060::1::::<><>::
+::res://Builds/::1693427943
 ::res://Scenes/::1691516253
-::res://Scenes/Environments/::1693334774
-sce_main_game.tscn::PackedScene::1191951184724144503::1693334774::0::1::::<><>::uid://byghcq14helfb::::res://Scenes/Environments/sce_main_menu.tscn<>res://Assets/Scripts/Game_Controller.gd
-sce_main_menu.tscn::PackedScene::4083768669933080839::1693334774::0::1::::<><>::res://Assets/Scripts/Main_Menu.gd
-sce_reactor_room.tscn::PackedScene::6439611464352006246::1693334774::0::1::::<><>::res://Assets/Scripts/GameManager.gd<>res://Assets/Scripts/TaskManager.gd<>res://Assets/Scripts/PlayerControls.gd<>uid://7wyne4f3wb8j::::res://Scenes/Objects/Panel_Base.tscn<>uid://2i485uuhmhpx::::res://Scenes/Objects/Task 1/Task_1_Button.tscn<>uid://cxc30xbcxg2ej::::res://Assets/Materials/Objects/MAT_floor.tres<>uid://bfrqccvu7fnyb::::res://Scenes/Objects/Task 3/Task_3_Panel.tscn<>uid://b8pksirc6sbct::::res://Scenes/Objects/Task 2/Task_2_Panel.tscn
+::res://Scenes/Environments/::1693427840
+sce_main_game.tscn::PackedScene::1191951184724144503::1693427840::0::1::::<><>::uid://byghcq14helfb::::res://Scenes/Environments/sce_main_menu.tscn<>res://Assets/Scripts/Game_Controller.gd
+sce_main_menu.tscn::PackedScene::4083768669933080839::1693427840::0::1::::<><>::res://Assets/Scripts/Main_Menu.gd
+sce_reactor_room.tscn::PackedScene::6439611464352006246::1693427840::0::1::::<><>::res://Assets/Scripts/GameManager.gd<>res://Assets/Scripts/TaskManager.gd<>res://Assets/Scripts/PlayerControls.gd<>uid://7wyne4f3wb8j::::res://Scenes/Objects/Panel_Base.tscn<>uid://2i485uuhmhpx::::res://Scenes/Objects/Task 1/Task_1_Button.tscn<>uid://cxc30xbcxg2ej::::res://Assets/Materials/Objects/MAT_floor.tres<>uid://bfrqccvu7fnyb::::res://Scenes/Objects/Task 3/Task_3_Panel.tscn<>uid://b8pksirc6sbct::::res://Scenes/Objects/Task 2/Task_2_Panel.tscn
 ::res://Scenes/Objects/::1693240050
 Panel_Base.tscn::PackedScene::2292939985311700287::1690156636::0::1::::<><>::uid://xw5vs6rylql6
-::res://Scenes/Objects/Task 1/::1693334901
-Task_1_Button.tscn::PackedScene::1913435131763577345::1693334774::0::1::::<><>::res://Assets/Scripts/Task 1/Task1ButtonFunctionality.gd<>uid://be2flkm7yetrs::::res://Assets/Models/Task/task1_button_V01.obj<>uid://dsupjme06mpfr::::res://Assets/Materials/Objects/MAT_task1_disabled.tres<>uid://rfwiq5prflv1::::res://Assets/SFX/Task 1/Task1_Button_Click.wav
+::res://Scenes/Objects/Task 1/::1693427840
+Task_1_Button.tscn::PackedScene::1913435131763577345::1693427840::0::1::::<><>::res://Assets/Scripts/Task 1/Task1ButtonFunctionality.gd<>uid://be2flkm7yetrs::::res://Assets/Models/Task/task1_button_V01.obj<>uid://dsupjme06mpfr::::res://Assets/Materials/Objects/MAT_task1_disabled.tres
 ::res://Scenes/Objects/Task 2/::1693242610
 Task_2_Goal.tscn::PackedScene::8842996404945694244::1693242610::0::1::::<><>::uid://b1kff5wj3bk2s
 Task_2_Panel.tscn::PackedScene::4734257950858501339::1693240721::0::1::::<><>::res://Assets/Scripts/Task 2/Task2PanelFunctionality.gd<>uid://cnvlph6djntlt
 Task_2_Slider.tscn::PackedScene::6510686159741705253::1693240696::0::1::::<><>::uid://cjlx8i3dxcee3
-::res://Scenes/Objects/Task 3/::1693334774
+::res://Scenes/Objects/Task 3/::1693427972
 Task_3_CornerPipe.tscn::PackedScene::8439457070364846716::1693242686::0::1::::<><>::res://Assets/Scripts/Task 3/Task3BentPipe.gd<>uid://dkj71r6drbksp
-Task_3_Panel.tscn::PackedScene::2773434505613629005::1693334774::0::1::::<><>::res://Assets/Scripts/Task 3/Task3Functionality.gd<>uid://dyo0r8566bo21::::res://Scenes/Objects/Task 3/Task_3_StraightPipe.tscn<>uid://dsieviog38ut5::::res://Scenes/Objects/Task 3/Task_3_CornerPipe.tscn<>uid://grf2qr104ag8::::res://Scenes/Objects/Task 3/Task_3_TPipe.tscn
+Task_3_Panel.tscn::PackedScene::2773434505613629005::1693427972::0::1::::<><>::res://Assets/Scripts/Task 3/Task3Functionality.gd<>uid://dyo0r8566bo21::::res://Scenes/Objects/Task 3/Task_3_StraightPipe.tscn<>uid://dsieviog38ut5::::res://Scenes/Objects/Task 3/Task_3_CornerPipe.tscn<>uid://grf2qr104ag8::::res://Scenes/Objects/Task 3/Task_3_TPipe.tscn
 Task_3_StraightPipe.tscn::PackedScene::8874245651329130304::1693242692::0::1::::<><>::res://Assets/Scripts/Task 3/Task3StraightPipe.gd<>uid://bg3d2gopwoiea
 Task_3_TPipe.tscn::PackedScene::456580152897621861::1693243207::0::1::::<><>::uid://dsl8ibdq85260
 ::res://Scenes/Player/::1689818308

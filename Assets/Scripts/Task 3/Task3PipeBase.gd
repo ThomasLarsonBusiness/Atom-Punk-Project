@@ -15,7 +15,7 @@ var rotation_amount : float = 0.0
 const rotation_axis = Vector3(0,1,0)
 
 # Functions
-func _ready():	
+func on_start():	
 	initial_basis = transform.basis
 	initial_rotation = get_rotation()
 	$PipeMesh.set("surface_material_override/0", green_material)

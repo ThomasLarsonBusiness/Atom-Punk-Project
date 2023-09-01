@@ -5,12 +5,13 @@ var rng = RandomNumberGenerator.new()
 var pipe_array = Array()
 
 # Called when the node enters the scene tree for the first time.
-func _ready():
+func on_start():
 	# Gets all the pipes
 	for i in 3:
 		for n in 3:
 			var path = "Pipe_" + str(i) + "_" + str(n)
 			var pipe = get_node(path)
+			pipe.on_start()
 			pipe_array.append(pipe)
 
 func reset():

@@ -7,8 +7,8 @@ func _on_area_3d_input_event(camera, event, position, normal, shape_idx):
 		var rot_amount = (PI / 2)
 		transform.basis = transform.basis.rotated(rotation_axis, rot_amount)
 		
-		var cur_rot = snapped(get_rotation().y, 0.001)
-		var initial_rot = snapped(initial_rotation.y, 0.001)
+		var cur_rot = snapped(get_rotation().y, 0.1)
+		var initial_rot = snapped(initial_rotation.y, 0.1)
 		
 		if cur_rot == initial_rot :
 			correct_rotation = true
