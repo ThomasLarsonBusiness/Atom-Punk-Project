@@ -16,7 +16,6 @@ var task1_timer : float = 0.0
 var task1_base_cooldown : float = 6.0
 var task1_cooldown : float = 6.0
 var task1_buttons_changed : int = 0
-var task1_in_progress : bool = false
 var task1_enabled : bool = false
 
 # Task 2 Variables
@@ -36,15 +35,13 @@ var task2_enabled : bool = false
 
 # Task 3 Variables
 var task3_panel
-var task3_pipes_to_fail : int
 var task3_failed_pipes : int = 0
-var task3_base_cooldown : float = 30.0
+var task3_correct_pipes : int = 0
+var task3_max_failed : int = 3
+var task3_base_cooldown : float = 8.0
 var task3_base_cooldown_range : float = 20.0
-var task3_cooldown : float
-var task3_cooldown_min : float
-var task3_cooldown_max : float
+var task3_cooldown : float 
 var task3_timer : float
-var task3_in_progress: bool = false
 var task3_enabled : bool = false
 
 # Called when the node enters the scene tree for the first time.
@@ -89,7 +86,7 @@ func task1_init(difficulty: int):
 		
 		# Sets cooldown 
 		task1_base_cooldown = task1_base_cooldown - (difficulty / 10)
-		task1_cooldown = task1_base_cooldown + 6.0
+		task1_cooldown = task1_base_cooldown + 6.0 # Randomize second variable
 		task1_enabled = true
 
 func task1_trigger():
@@ -185,35 +182,30 @@ func task3_init(difficulty: int):
 		task3_panel = get_node("Panel_Base_1/Task_3_Panel")
 		task3_panel.on_start()
 		
-		# Determines how many pipes to fail
-		task3_pipes_to_fail = int(difficulty / 3)
-		
-		# Sets Cooldown range
-		task3_cooldown_min = task3_base_cooldown - difficulty / 1.5
-		task3_cooldown_max = task3_cooldown_min + (task3_base_cooldown_range - difficulty / 3)
-		task3_cooldown = rng.randf_range(task3_cooldown_min, task3_cooldown_max)
-		
-		# Marks task as enabled
+		# Sets Cooldown
+		task3_base_cooldown = task3_base_cooldown - (difficulty / 6)
+		task3_cooldown = task3_base_cooldown + 8 # Randomize second variable
+		task3_max_failed = task3_max_failed + int(difficulty / 6)
 		task3_enabled = true
 
 func task3_trigger():
-	task3_panel.task_failure(task3_pipes_to_fail)
-	task3_failed_pipes = task3_pipes_to_fail
-	task3_in_progress = true
+	if task3_max_failed > task3_failed_pipes:
+		task3_panel.task_failure()
+		task3_failed_pipes += 1
 
 func task3_update(amount : int):
-	if task3_in_progress:
-		task3_failed_pipes += amount
-		if task3_failed_pipes == 0:
-			task3_in_progress = false
-			task3_panel.reset()
-			task3_cooldown = rng.randf_range(task3_cooldown_min, task3_cooldown_max)
+	task3_correct_pipes += amount
+	if task3_failed_pipes == task3_correct_pipes:
+		task3_panel.reset()
+		task3_failed_pipes = 0
+		task3_correct_pipes = 0
+		task3_cooldown += 8
 
 # Helper Functions
 func timer_update(delta):
 	if game_manager.game_state == game_manager.GAMEPLAY:
 		# Updates the task 1 timer
-		if !task1_in_progress and task1_enabled:
+		if task1_enabled:
 			task1_timer += delta
 			if task1_timer >= task1_cooldown:
 				task1_trigger()
@@ -229,11 +221,13 @@ func timer_update(delta):
 				task2_timer = 0
 		
 		# Updates the task 3 timer
-		if !task3_in_progress and task3_enabled:
+		if task3_enabled:
 			task3_timer += delta
 			if task3_timer >= task3_cooldown:
 				task3_trigger()
 				task3_timer = 0
+				if task3_cooldown > task3_base_cooldown:
+					task3_cooldown = task3_base_cooldown
 
 # Updates the heatbar based on what tasks are active
 func update_heatbar(delta):
@@ -241,7 +235,7 @@ func update_heatbar(delta):
 		var heat_multiplier : float = 0
 		heat_multiplier += task1_buttons_changed * 0.25
 		heat_multiplier += int(task2_in_progress) * 1.5
-		heat_multiplier += int(task3_in_progress) * 1.25
+		heat_multiplier += task3_failed_pipes * 0.5
 		
 		if heat_multiplier == 0:
 			heat_multiplier = -0.5
@@ -258,7 +252,6 @@ func restart_shift(difficulty1, difficulty2, difficulty3):
 		task1_btn_array[n].set_green()
 	task1_timer = 0
 	task1_buttons_changed = 0
-	task1_in_progress = false
 	task1_enabled = false
 	task1_init(difficulty1)
 	
@@ -279,8 +272,6 @@ func restart_shift(difficulty1, difficulty2, difficulty3):
 	# Task 3 Reset
 	task3_panel.reset()
 	task3_timer = 0
-	task3_pipes_to_fail = 0
-	task3_in_progress = 0
 	task3_enabled = false
 	task3_init(difficulty3)
 	

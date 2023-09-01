@@ -12,7 +12,7 @@ func _on_area_3d_input_event(camera, event, position, normal, shape_idx):
 		
 		if cur_rot == initial_rot :
 			correct_rotation = true
-			task_manager.task3_update(-1)
-		elif correct_rotation:
 			task_manager.task3_update(1)
+		elif correct_rotation:
+			task_manager.task3_update(-1)
 			correct_rotation = false

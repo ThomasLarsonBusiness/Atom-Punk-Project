@@ -16,10 +16,10 @@ func _on_area_3d_input_event(camera, event, position, normal, shape_idx):
 		
 		if correct_rotation:
 			correct_rotation = false
-			task_manager.task3_update(1)
+			task_manager.task3_update(-1)
 		else:
 			correct_rotation = true
-			task_manager.task3_update(-1)
+			task_manager.task3_update(1)
 		
 		#enabled = false
 		#$PipeMesh.set("surface_material_override/0", green_material)
