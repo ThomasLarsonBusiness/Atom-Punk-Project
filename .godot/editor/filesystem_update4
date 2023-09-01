@@ -3,11 +3,6 @@ res://Assets/Scripts/TaskManager.gd
 res://Assets/Materials/Objects/MAT_task1_disabled.tres
 res://Assets/Materials/Objects/MAT_task2_disabled.tres
 res://Scenes/Environments/sce_main_menu.tscn
-res://Scenes/Objects/Task 3/Task_3_Panel.tscn
-res://Scenes/Environments/sce_main_game.tscn
 res://Scenes/Objects/Task 1/Task_1_Button.tscn
-res://Scenes/Objects/Task 3/Task_3_TPipe.tscn
-res://Assets/Scripts/Task 3/Task3PipeBase.gd
-res://Assets/Scripts/Task 3/Task3Functionality.gd
-res://Scenes/Objects/Task 3/Task_3_StraightPipe.tscn
 res://Scenes/Objects/Task 3/Task_3_CornerPipe.tscn
+res://Assets/Scripts/Task 1/Task1ButtonFunctionality.gd

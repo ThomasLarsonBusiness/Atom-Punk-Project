@@ -13,12 +13,8 @@ var endgame_label
 # Task 1 Variables
 var task1_btn_array = Array()
 var task1_timer : float = 0.0
-var task1_base_cooldown : float = 25.0
-var task1_base_cooldown_range : float = 15.0
-var task1_cooldown : float = 30.0
-var task1_cooldown_min : float = 0.0
-var task1_cooldown_max : float = 0.0
-var task1_buttons_to_change: int = 0
+var task1_base_cooldown : float = 6.0
+var task1_cooldown : float = 6.0
 var task1_buttons_changed : int = 0
 var task1_in_progress : bool = false
 var task1_enabled : bool = false
@@ -91,41 +87,25 @@ func task1_init(difficulty: int):
 		for n in task1_btn_array.size():
 			task1_btn_array[n].enable()
 		
-		# Sets cooldown range
-		task1_cooldown_min = int(difficulty/5) * 2 + (task1_base_cooldown - difficulty)
-		task1_cooldown_max = (task1_cooldown_min + task1_base_cooldown_range
-			- (int(difficulty/5) * 2))
-		task1_cooldown = rng.randf_range(task1_cooldown_min, task1_cooldown_max)
-		
-		# Sets the number of buttons that should change
-		task1_buttons_to_change = clamp(ceil(float(difficulty)/5.0), 1, 4)
-		if difficulty == 20:
-			task1_buttons_to_change = 5
-		
-		# Marks task as enabled
+		# Sets cooldown 
+		task1_base_cooldown = task1_base_cooldown - (difficulty / 10)
+		task1_cooldown = task1_base_cooldown + 6.0
 		task1_enabled = true
 
 func task1_trigger():
-	# Set some to red
-	var change_array = Array()
-	while change_array.size() < task1_buttons_to_change:
-		var rand_int = rng.randi_range(0,task1_btn_array.size() - 1)
-		if !change_array.has(rand_int):
-			change_array.append(rand_int)
-	
-	for n in change_array.size():
-		task1_btn_array[change_array[n]].set_red()
-	
-	# Sets up Task Tracking
-	task1_buttons_changed = task1_buttons_to_change
-	task1_in_progress = true
+	if task1_btn_array.size() > task1_buttons_changed:
+		var success = false
+		while !success:
+			var rand_int = rng.randi_range(0, task1_btn_array.size() - 1)
+			if !task1_btn_array[rand_int].is_red:
+				task1_btn_array[rand_int].set_red()
+				task1_buttons_changed += 1
+				success = true
 	
 func task1_update():
-	if task1_in_progress:
-		task1_buttons_changed -= 1
-		if task1_buttons_changed == 0:
-			task1_in_progress = false
-			task1_cooldown = rng.randi_range(task1_cooldown_min, task1_cooldown_max)
+	task1_buttons_changed -= 1
+	if task1_buttons_changed == 0:
+		task1_cooldown += 6.0
 
 # Task 2
 func task2_init(difficulty: int):
@@ -238,6 +218,8 @@ func timer_update(delta):
 			if task1_timer >= task1_cooldown:
 				task1_trigger()
 				task1_timer = 0
+				if task1_cooldown > task1_base_cooldown:
+					task1_cooldown = task1_base_cooldown
 		
 		# Updates the task 2 timer
 		if !task2_in_progress and task2_enabled:
@@ -256,8 +238,8 @@ func timer_update(delta):
 # Updates the heatbar based on what tasks are active
 func update_heatbar(delta):
 	if game_manager.game_state == game_manager.GAMEPLAY:
-		var heat_multiplier = 0
-		heat_multiplier += int(task1_in_progress) * 1
+		var heat_multiplier : float = 0
+		heat_multiplier += task1_buttons_changed * 0.25
 		heat_multiplier += int(task2_in_progress) * 1.5
 		heat_multiplier += int(task3_in_progress) * 1.25
 		
