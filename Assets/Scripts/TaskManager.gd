@@ -22,15 +22,15 @@ var task1_enabled : bool = false
 var task2_slider_array = Array()
 var task2_goals_array = Array()
 var task2_timer : float = 0.0
-var task2_base_cooldown: float = 30.0
-var task2_base_cooldown_range : float = 20.0
+var task2_base_cooldown: float = 20
+#var task2_base_cooldown_range : float = 20.0
 var task2_cooldown : float = 20.0
-var task2_cooldown_min : float = 0.0
-var task2_cooldown_max: float = 0.0
-var task2_sliders_to_activate : int = 3
+#var task2_cooldown_min : float = 0.0
+#var task2_cooldown_max: float = 0.0
+#var task2_sliders_to_activate : int = 3
 var task2_sliders_active : int = 0
 var task2_slider_min_distance : float = 0.0
-var task2_in_progress : bool = false
+#var task2_in_progress : bool = false
 var task2_enabled : bool = false
 
 # Task 3 Variables
@@ -125,14 +125,8 @@ func task2_init(difficulty: int):
 
 		
 		# Sets cooldown (Will need a max and min, plus the initial cooldown)
-		task2_cooldown_min = task2_base_cooldown - (difficulty / 2)
-		task2_cooldown_max = task2_cooldown_min + (task2_base_cooldown_range - difficulty / 4)
-		task2_cooldown = rng.randf_range(task2_cooldown_min, task2_cooldown_max)
-		
-		# Sets number of sliders to activate (Will need to be updated based on difficulty)
-		task2_sliders_to_activate = 2 + int((difficulty - 1) / 5)
-		if difficulty == 20:
-			task2_sliders_to_activate = 6
+		task2_base_cooldown = task2_base_cooldown - (difficulty / 4)
+		task2_cooldown = task2_base_cooldown + 10
 		
 		# Sets the minimum distance away from the slider the goal can be, based on difficulty
 		task2_slider_min_distance = 0.04 + 0.002 * difficulty
@@ -140,18 +134,18 @@ func task2_init(difficulty: int):
 		# Marks the task as enabled
 		task2_enabled = true
 
-func task2_trigger():
-	# Gets Which Random Sliders to Activate
-	var change_array = Array()
-	while change_array.size() < task2_sliders_to_activate:
-		var rand_int = rng.randi_range(0, task2_slider_array.size() - 1)
-		if !change_array.has(rand_int):
-			change_array.append(rand_int)
-	
-	# Moves the goals and enables sliders
-	for n in change_array.size():
-		var goal = task2_goals_array[change_array[n]]
-		var slider = task2_slider_array[change_array[n]]
+func task2_trigger():	
+	if task2_slider_array.size() > task2_sliders_active:
+		# Gets Valid Slider
+		var success = false
+		var goal
+		var slider
+		while !success:
+			var rand_int = rng.randi_range(0, task2_slider_array.size() - 1)
+			if !task2_slider_array[rand_int].enabled:
+				goal = task2_goals_array[rand_int]
+				slider = task2_slider_array[rand_int]
+				success = true
 		
 		# Moves goal once valid placement is found
 		var valid_placement = false
@@ -163,17 +157,14 @@ func task2_trigger():
 				valid_placement = true
 		goal.enable_goal()
 		slider.enable_slider()
-	
-	# Sets up task tracking
-	task2_sliders_active = task2_sliders_to_activate
-	task2_in_progress = true
+		
+		# Sets up task tracking
+		task2_sliders_active += 1
 
 func task2_update():
-	if task2_in_progress:
-		task2_sliders_active -= 1
-		if task2_sliders_active == 0:
-			task2_in_progress = false
-			task2_cooldown = rng.randf_range(task2_cooldown_min, task2_cooldown_max)
+	task2_sliders_active -= 1
+	if task2_sliders_active == 0:
+		task2_cooldown = task2_cooldown + 10
 
 # Task 3
 func task3_init(difficulty: int):
@@ -214,11 +205,13 @@ func timer_update(delta):
 					task1_cooldown = task1_base_cooldown
 		
 		# Updates the task 2 timer
-		if !task2_in_progress and task2_enabled:
+		if task2_enabled:
 			task2_timer += delta
 			if task2_timer >= task2_cooldown:
 				task2_trigger()
 				task2_timer = 0
+				if task2_cooldown > task2_base_cooldown:
+					task2_cooldown = task2_base_cooldown
 		
 		# Updates the task 3 timer
 		if task3_enabled:
@@ -234,7 +227,7 @@ func update_heatbar(delta):
 	if game_manager.game_state == game_manager.GAMEPLAY:
 		var heat_multiplier : float = 0
 		heat_multiplier += task1_buttons_changed * 0.25
-		heat_multiplier += int(task2_in_progress) * 1.5
+		heat_multiplier += task2_sliders_active * 0.25
 		heat_multiplier += task3_failed_pipes * 0.5
 		
 		if heat_multiplier == 0:
@@ -242,6 +235,7 @@ func update_heatbar(delta):
 		
 		# Updates the Heat
 		heat_bar.value += delta * heat_multiplier
+		print(heat_bar.value)
 		if heat_bar.max_value <= heat_bar.value:
 			endgame_label.text = "YOU LOST"
 			game_manager.end_game()
@@ -265,7 +259,6 @@ func restart_shift(difficulty1, difficulty2, difficulty3):
 	task2_goals_array = Array()
 	task2_timer = 0
 	task2_sliders_active = 0
-	task2_in_progress = false
 	task2_enabled = false
 	task2_init(difficulty2)
 	
