@@ -9,6 +9,7 @@ var red_material = load("res://Assets/Materials/Objects/MAT_task1_button_Red.tre
 var disabled_material = load("res://Assets/Materials/Objects/MAT_task1_disabled.tres")
 
 func enable():
+	is_red = false
 	$ButtonMesh.set("surface_material_override/0", green_material)
 
 func set_red():
