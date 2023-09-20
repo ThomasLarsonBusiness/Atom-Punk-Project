@@ -266,6 +266,7 @@ func restart_shift(difficulty1, difficulty2, difficulty3):
 	task3_panel.reset()
 	task3_timer = 0
 	task3_enabled = false
+	task3_failed_pipes = 0
 	task3_init(difficulty3)
 	
 	
