@@ -4,3 +4,7 @@ res://Assets/Materials/Objects/MAT_task1_disabled.tres
 res://Assets/Materials/Objects/MAT_task2_disabled.tres
 res://Scenes/Environments/sce_main_menu.tscn
 res://Scenes/Objects/Task 2/Task_2_Slider.tscn
+res://Scenes/Objects/Win Condition/SCE_Win_Condition_Tile.tscn
+res://Assets/Scripts/Win Condition/WinConditionTile.gd
+res://Scenes/Objects/Win Condition/SCE_Win_Condition_Grid.tscn
+res://Assets/Scripts/Win Condition/WinConditionGridManager.gd

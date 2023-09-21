@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cu078v4q364pq"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/Win Condition/WinConditionGridManager.gd" id="1_pqb1l"]
+
+[node name="SCE_Win_Condition_Grid" type="Node2D"]
+script = ExtResource("1_pqb1l")

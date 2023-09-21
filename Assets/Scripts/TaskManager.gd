@@ -235,7 +235,6 @@ func update_heatbar(delta):
 		
 		# Updates the Heat
 		heat_bar.value += delta * heat_multiplier
-		print(heat_bar.value)
 		if heat_bar.max_value <= heat_bar.value:
 			endgame_label.text = "YOU LOST"
 			game_manager.end_game()
