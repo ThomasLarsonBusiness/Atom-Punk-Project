@@ -21,3 +21,5 @@ res://Assets/Scripts/Win Condition/WinConditionUI.gd
 res://Assets/Scripts/Win Condition/WinConditionSelector.gd
 res://Assets/Scripts/PlayerControls.gd
 res://Assets/Scripts/GameManager.gd
+res://Scenes/Environments/sce_main_game.tscn
+res://Assets/Scripts/Game_Controller.gd

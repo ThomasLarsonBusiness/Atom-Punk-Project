@@ -29,7 +29,7 @@ func _ready():
 	#timer_ui = get_node("UI/Timer")
 	
 	endgame_label = get_node("UI/End Game Header")
-	endgame_restart_button = get_node("UI/Exit Button")
+	endgame_restart_button = get_node("UI/To Menu Button")
 	endgame_quit_button = get_node("UI/Restart Button")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -69,8 +69,9 @@ func restart_game():
 	endgame_quit_button.hide()
 
 # Signals
-func _on_exit_button_pressed():
-	get_tree().quit()
+func _on_to_menu_button_pressed():
+	game_controller.main_menu.show()
+	self.queue_free()
 
 func _on_restart_shift_pressed():
 	restart_game()

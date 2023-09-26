@@ -15,7 +15,7 @@ func _on_sce_main_menu_progress_to_game():
 	task2_difficulty = main_menu.task2_difficulty
 	task3_difficulty = main_menu.task3_difficulty
 	
-	main_menu.queue_free()
+	main_menu.hide()
 	
 	var scene = reactor_scene.instantiate()
 	add_child(scene)
