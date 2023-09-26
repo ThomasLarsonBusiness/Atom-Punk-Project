@@ -19,3 +19,5 @@ res://Assets/WinConditionSelector.gd
 res://Assets/WinConditionUI.gd
 res://Assets/Scripts/Win Condition/WinConditionUI.gd
 res://Assets/Scripts/Win Condition/WinConditionSelector.gd
+res://Assets/Scripts/PlayerControls.gd
+res://Assets/Scripts/GameManager.gd

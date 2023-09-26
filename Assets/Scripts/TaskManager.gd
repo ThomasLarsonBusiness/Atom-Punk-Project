@@ -8,7 +8,6 @@ var game_manager
 var heat_timer : float = 0.0
 var heat_max : float = 0.0
 var heat_bar
-var endgame_label
 
 # Task 1 Variables
 var task1_btn_array = Array()
@@ -49,7 +48,6 @@ func _ready():
 	game_manager = get_node("../")
 	
 	heat_bar = get_node("../UI/HeatBar")
-	endgame_label = get_node("../UI/End Game Header")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -236,8 +234,7 @@ func update_heatbar(delta):
 		# Updates the Heat
 		heat_bar.value += delta * heat_multiplier
 		if heat_bar.max_value <= heat_bar.value:
-			endgame_label.text = "YOU LOST"
-			game_manager.end_game()
+			game_manager.end_game("YOU LOST")
 
 func restart_shift(difficulty1, difficulty2, difficulty3):
 	# Task 1 Reset

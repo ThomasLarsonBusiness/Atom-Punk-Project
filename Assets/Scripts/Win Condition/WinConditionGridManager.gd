@@ -11,8 +11,10 @@ extends Node2D
 # Puzzles
 var test_path = "res://Data/Puzzles/TestPuzzle.json"
 var test_path_2 = "res://Data/Puzzles/TestPuzzle2.json"
+var loaded_data
 
 # Fields
+@onready var game_manager = get_node("../")
 @onready var ui = get_node("SCE_Win_Condition_UI")
 var tiles = []
 var cardinal_directions = [Vector2(-1,0), Vector2(1,0), Vector2(0,-1), Vector2(0,1)]
@@ -25,28 +27,8 @@ var cables_placed : int = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	# Gets the Data
-	var puzzleData = load_puzzle(test_path_2)
-	
-	# Makes the Grid
-	var grid_size = puzzleData["grid_size"]
-	make_grid(grid_size["x"], grid_size["y"])
-	
-	# Sets the Power Tile
-	var power_loc = puzzleData["power_loc"]
-	power_tile = Vector2(power_loc["x"], power_loc["y"])
-	tiles[power_loc["x"]][power_loc["y"]].change_texture(power_texture, 0)
-	tiles[power_loc["x"]][power_loc["y"]].silent_signal = true
-	
-	# Sets the House Tiles
-	var house_locs = puzzleData["house_locs"]
-	for i in house_locs.size():
-		var parsed_xy = house_locs[i].split("-")
-		tiles[int(parsed_xy[0])][int(parsed_xy[1])].change_texture(house_texture, 0)
-		tiles[int(parsed_xy[0])][int(parsed_xy[1])].silent_signal = true
-	
-	# Sets the Amount of Cables Needed
-	cables_needed = (house_locs.size() + 1) * 3
-
+	loaded_data = load_puzzle(test_path)
+	create_puzzle(loaded_data)
 
 
 func load_puzzle(path : String):
@@ -79,6 +61,27 @@ func make_grid(x, y):
 	
 	grid_width = x
 	grid_height = y
+
+func create_puzzle(data):
+	# Makes the Grid
+	var grid_size = data["grid_size"]
+	make_grid(grid_size["x"], grid_size["y"])
+	
+	# Sets the Power Tile
+	var power_loc = data["power_loc"]
+	power_tile = Vector2(power_loc["x"], power_loc["y"])
+	tiles[power_loc["x"]][power_loc["y"]].change_texture(power_texture, 0)
+	tiles[power_loc["x"]][power_loc["y"]].silent_signal = true
+	
+	# Sets the House Tiles
+	var house_locs = data["house_locs"]
+	for i in house_locs.size():
+		var parsed_xy = house_locs[i].split("-")
+		tiles[int(parsed_xy[0])][int(parsed_xy[1])].change_texture(house_texture, 0)
+		tiles[int(parsed_xy[0])][int(parsed_xy[1])].silent_signal = true
+	
+	# Sets the Amount of Cables Needed
+	cables_needed = (house_locs.size() + 1) * 3
 
 # Updates a tile's texture and data
 func update_tile(x, y):
@@ -155,4 +158,13 @@ func check_solution():
 	
 	# If success is equal to needed cables / 3, the player won
 	if success == cables_needed/3:
-		print("WIN")
+		game_manager.end_game("You Won!")
+
+# This will likely get changed into loading in a new puzzle but for now this works
+func restart_puzzle():
+	cables_placed = 0
+	for i in grid_width:
+		for j in grid_height:
+			tiles[i][j].queue_free()
+	tiles.clear()
+	create_puzzle(loaded_data)

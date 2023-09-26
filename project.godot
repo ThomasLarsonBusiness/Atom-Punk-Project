@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Atom Punk Project"
-run/main_scene="res://Scenes/Objects/Win Condition/SCE_Win_Condition_Grid.tscn"
+run/main_scene="res://Scenes/Environments/sce_main_game.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -41,6 +41,11 @@ import/fbx/enabled=false
 "Look Right"={
 "deadzone": 0.5,
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":68,"key_label":0,"unicode":100,"echo":false,"script":null)
+]
+}
+"Toggle Puzzle"={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":83,"key_label":0,"unicode":115,"echo":false,"script":null)
 ]
 }
 "Temp Left Click"={

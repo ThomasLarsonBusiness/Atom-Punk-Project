@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cx0npv0ak5sve"]
+[gd_scene load_steps=20 format=3 uid="uid://cx0npv0ak5sve"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/GameManager.gd" id="1_c6l20"]
 [ext_resource type="Script" path="res://Assets/Scripts/TaskManager.gd" id="1_h51np"]
@@ -8,6 +8,7 @@
 [ext_resource type="Material" uid="uid://cxc30xbcxg2ej" path="res://Assets/Materials/Objects/MAT_floor.tres" id="3_jr80s"]
 [ext_resource type="PackedScene" uid="uid://bfrqccvu7fnyb" path="res://Scenes/Objects/Task 3/Task_3_Panel.tscn" id="6_288cr"]
 [ext_resource type="PackedScene" uid="uid://b8pksirc6sbct" path="res://Scenes/Objects/Task 2/Task_2_Panel.tscn" id="7_2ydr6"]
+[ext_resource type="PackedScene" uid="uid://cu078v4q364pq" path="res://Scenes/Objects/Win Condition/SCE_Win_Condition_Grid.tscn" id="9_ifsqr"]
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_px3eh"]
 
@@ -191,12 +192,14 @@ transform = Transform3D(-4.37114e-08, 0, 72.119, 0, 22.8533, 0, -1, 0, -3.15242e
 mesh = SubResource("BoxMesh_ouyea")
 
 [node name="UI" type="Control" parent="."]
+z_index = 5
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Timer" type="RichTextLabel" parent="UI"]
+visible = false
 layout_mode = 0
 offset_left = 10.0
 offset_right = 685.0
@@ -257,6 +260,10 @@ light_energy = 0.341
 [node name="Main_Light" type="DirectionalLight3D" parent="Lighting"]
 transform = Transform3D(0.796889, -2.64072e-08, 0.604126, -0.604126, -3.48331e-08, 0.796889, 0, -1, -4.37114e-08, 18.062, 39.316, -5.20351)
 light_angular_distance = 90.0
+
+[node name="Puzzle UI" parent="." instance=ExtResource("9_ifsqr")]
+visible = false
+z_index = -5
 
 [connection signal="pressed" from="UI/Exit Button" to="." method="_on_exit_button_pressed"]
 [connection signal="pressed" from="UI/Restart Button" to="." method="_on_restart_shift_pressed"]

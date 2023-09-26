@@ -3,13 +3,16 @@ extends Camera3D
 #Fields
 var game_manager
 var anim_player
+var puzzle_grid
 enum FACING {LEFT, FORWARD, RIGHT}
 var current_facing : FACING = FACING.FORWARD
+var puzzle_toggled : bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	game_manager = get_node("../")
 	anim_player = get_node("AnimationPlayer")
+	puzzle_grid = get_node("../Puzzle UI")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -34,3 +37,10 @@ func _process(delta):
 			if current_facing == FACING.FORWARD:
 				anim_player.play("Player_Facing/Forward_To_Right")
 			current_facing = FACING.RIGHT
+		if Input.is_action_just_pressed("Toggle Puzzle"):
+			if puzzle_toggled:
+				puzzle_grid.hide()
+			else:
+				puzzle_grid.show()
+			
+			puzzle_toggled = !puzzle_toggled
