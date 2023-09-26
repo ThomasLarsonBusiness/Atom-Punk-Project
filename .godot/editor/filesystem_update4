@@ -8,3 +8,14 @@ res://Scenes/Objects/Win Condition/SCE_Win_Condition_Tile.tscn
 res://Assets/Scripts/Win Condition/WinConditionTile.gd
 res://Scenes/Objects/Win Condition/SCE_Win_Condition_Grid.tscn
 res://Assets/Scripts/Win Condition/WinConditionGridManager.gd
+res://Data/Puzzles/TestPuzzle.tres
+res://Data/Puzzles/TestPuzzle.json
+res://Data/Puzzles/TestPuzzle2.json
+res://Scenes/Objects/Win Condition/SCE_Win_Condition_UI.tscn
+res://Scenes/Objects/Win Condition/WinConditionUI.gd
+res://Scenes/Objects/Win Condition/SCE_Win_Condition_Selector.tscn
+res://Scenes/Objects/Win Condition/WinConditionSelector.gd
+res://Assets/WinConditionSelector.gd
+res://Assets/WinConditionUI.gd
+res://Assets/Scripts/Win Condition/WinConditionUI.gd
+res://Assets/Scripts/Win Condition/WinConditionSelector.gd

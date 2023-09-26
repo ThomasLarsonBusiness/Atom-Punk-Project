@@ -1,6 +1,9 @@
-res://Scenes/Objects/Win Condition
-res://Assets/Scripts/Win Condition
 res://Assets/Textures
+res://Assets/Scripts/Win Condition
+C:/Users/tjl20/Documents/Godot Projects/Atom Punk Project/Data/Puzzles
+res://Data/Puzzles
+res://Scenes/Objects/Win Condition
+res://Scenes/Environments
 res://Assets/Materials/Objects
 C:/Users/tjl20/Documents/Godot Projects/Atom Punk Project/Builds
 res://Assets/SFX/Task 1
@@ -8,7 +11,6 @@ res://Assets/Scripts/Task 3
 res://Assets/Scripts/Task 2
 res://Assets/Scripts/Task 1
 res://Assets/Scripts
-res://Scenes/Environments
 res://Scenes/Objects
 res://Assets/Models/Task
 res://Assets/Materials/UI

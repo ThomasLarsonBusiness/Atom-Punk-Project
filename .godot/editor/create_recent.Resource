@@ -1,3 +1,4 @@
+JSON
 AudioStreamWAV
 StandardMaterial3D
 CanvasItemMaterial
