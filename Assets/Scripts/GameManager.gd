@@ -10,10 +10,6 @@ var game_state = GAMEPLAY
 @onready var player_controller = get_node("Camera3D")
 @onready var puzzle_grid = get_node("Puzzle UI")
 
-#var shift_timer : float = 0.0
-#var shift_length : float = 120.0
-#var timer_string = "Timer: %s"
-#var timer_ui
 var task1_difficulty
 var task2_difficulty
 var task3_difficulty
@@ -26,8 +22,6 @@ var endgame_quit_button
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	#timer_ui = get_node("UI/Timer")
-	
 	endgame_label = get_node("UI/End Game Header")
 	endgame_restart_button = get_node("UI/To Menu Button")
 	endgame_quit_button = get_node("UI/Restart Button")
@@ -36,16 +30,8 @@ func _ready():
 func _process(delta):
 	if game_state == GAMEPLAY:
 		pass
-		#timer_update(delta)
-		#if shift_timer >= shift_length:
-			#end_game()
-			#endgame_label.text = "YOU WON!"
 
 # Utility Functions
-#func timer_update(delta):
-	# Updates the shift timer
-	#shift_timer += delta
-	#timer_ui.text = timer_string % int(round(shift_timer))
 
 func start_game(difficulty1, difficulty2, difficulty3):
 	task_manager.setup_tasks(difficulty1, difficulty2, difficulty3)
