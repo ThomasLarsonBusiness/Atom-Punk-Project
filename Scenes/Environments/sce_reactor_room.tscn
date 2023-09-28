@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cx0npv0ak5sve"]
+[gd_scene load_steps=21 format=3 uid="uid://cx0npv0ak5sve"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/GameManager.gd" id="1_c6l20"]
 [ext_resource type="Script" path="res://Assets/Scripts/TaskManager.gd" id="1_h51np"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bfrqccvu7fnyb" path="res://Scenes/Objects/Task 3/Task_3_Panel.tscn" id="6_288cr"]
 [ext_resource type="PackedScene" uid="uid://b8pksirc6sbct" path="res://Scenes/Objects/Task 2/Task_2_Panel.tscn" id="7_2ydr6"]
 [ext_resource type="PackedScene" uid="uid://cu078v4q364pq" path="res://Scenes/Objects/Win Condition/SCE_Win_Condition_Grid.tscn" id="9_ifsqr"]
+[ext_resource type="ArrayMesh" uid="uid://cfrciqmiidt26" path="res://Assets/Models/Environmental/Main_Reactor_V02.obj" id="10_cjj7e"]
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_px3eh"]
 
@@ -190,6 +191,11 @@ mesh = SubResource("BoxMesh_ouyea")
 [node name="Wall 4" type="MeshInstance3D" parent="Environment"]
 transform = Transform3D(-4.37114e-08, 0, 72.119, 0, 22.8533, 0, -1, 0, -3.15242e-06, 0.317194, 9.8032, 23.8928)
 mesh = SubResource("BoxMesh_ouyea")
+
+[node name="MainReactorV02" type="MeshInstance3D" parent="Environment"]
+transform = Transform3D(1.5013, 0, 0, 0, 1.5013, 0, 0, 0, 1.5013, -17.8716, -1.19209e-07, 0.182475)
+mesh = ExtResource("10_cjj7e")
+skeleton = NodePath("../..")
 
 [node name="UI" type="Control" parent="."]
 z_index = 5
