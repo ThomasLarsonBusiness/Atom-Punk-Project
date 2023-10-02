@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://2i485uuhmhpx"]
+[gd_scene load_steps=6 format=3 uid="uid://2i485uuhmhpx"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/Task 1/Task1ButtonFunctionality.gd" id="1_3snup"]
 [ext_resource type="ArrayMesh" uid="uid://be2flkm7yetrs" path="res://Assets/Models/Task/task1_button_V01.obj" id="1_vuv47"]
 [ext_resource type="Material" uid="uid://dsupjme06mpfr" path="res://Assets/Materials/Objects/MAT_task1_disabled.tres" id="3_2dx2h"]
+[ext_resource type="AudioStream" uid="uid://cg6qmbkeqdwnd" path="res://Assets/SFX/Task 1/SFX_Task1_ButtonClick.wav" id="4_315sh"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xhuun"]
 size = Vector3(0.316915, 0.0933137, 0.318675)
@@ -21,5 +22,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.019367, 0)
 shape = SubResource("BoxShape3D_xhuun")
 
 [node name="AudioEmitter" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_315sh")
+max_distance = 100.0
+panning_strength = 0.0
+bus = &"Tasks"
 
 [connection signal="input_event" from="Area3D" to="." method="_on_area_3d_input_event"]

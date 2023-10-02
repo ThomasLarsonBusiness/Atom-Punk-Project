@@ -33,8 +33,9 @@ func _process(delta):
 
 # Utility Functions
 
-func start_game(difficulty1, difficulty2, difficulty3):
+func start_game(difficulty1, difficulty2, difficulty3, path):
 	task_manager.setup_tasks(difficulty1, difficulty2, difficulty3)
+	puzzle_grid.setup_puzzle(path)
 
 func end_game(label : String):
 	# Display End Game UI

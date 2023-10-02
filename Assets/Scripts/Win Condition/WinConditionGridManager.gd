@@ -9,8 +9,6 @@ extends Node2D
 @onready var house_texture = load("res://Assets/Textures/Win_Condition_House.png")
 
 # Puzzles
-var test_path = "res://Data/Puzzles/TestPuzzle.json"
-var test_path_2 = "res://Data/Puzzles/TestPuzzle2.json"
 var loaded_data
 
 # Fields
@@ -25,9 +23,9 @@ var cables_needed : int = 0
 var cables_placed : int = 0
 
 # Called when the node enters the scene tree for the first time.
-func _ready():
+func setup_puzzle(path):
 	# Gets the Data
-	loaded_data = load_puzzle(test_path)
+	loaded_data = load_puzzle(path)
 	create_puzzle(loaded_data)
 
 

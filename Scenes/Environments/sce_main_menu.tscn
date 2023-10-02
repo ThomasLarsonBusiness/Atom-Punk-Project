@@ -22,21 +22,39 @@ text = "TITLE"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Play Button" type="Button" parent="."]
+[node name="Shift 1 Button" type="Button" parent="."]
 layout_mode = 0
 offset_left = 846.0
 offset_top = 447.455
 offset_right = 1088.0
 offset_bottom = 527.454
 theme_override_font_sizes/font_size = 40
-text = "Play"
+text = "Play Shift 1"
+
+[node name="Shift 1 Button2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 846.0
+offset_top = 572.885
+offset_right = 1088.0
+offset_bottom = 652.884
+theme_override_font_sizes/font_size = 40
+text = "Play Shift 2"
+
+[node name="Custom Shift Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1368.0
+offset_top = 949.0
+offset_right = 1712.0
+offset_bottom = 1029.0
+theme_override_font_sizes/font_size = 40
+text = "Play Custom Shift"
 
 [node name="Exit Button" type="Button" parent="."]
 layout_mode = 0
 offset_left = 846.0
-offset_top = 594.81
+offset_top = 710.85
 offset_right = 1088.0
-offset_bottom = 674.809
+offset_bottom = 790.849
 theme_override_font_sizes/font_size = 40
 text = "Exit"
 
@@ -45,7 +63,7 @@ anchors_preset = 0
 offset_left = 1214.0
 offset_top = 226.0
 offset_right = 1864.0
-offset_bottom = 1022.0
+offset_bottom = 936.0
 
 [node name="Task 1 Difficulty" type="TextEdit" parent="Difficulties"]
 layout_mode = 0
@@ -121,5 +139,7 @@ text = "Difficulties"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[connection signal="pressed" from="Play Button" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="Shift 1 Button" to="." method="_on_shift_1_button_pressed"]
+[connection signal="pressed" from="Shift 1 Button2" to="." method="_on_shift_1_button_2_pressed"]
+[connection signal="pressed" from="Custom Shift Button" to="." method="_on_custom_shift_button_pressed"]
 [connection signal="pressed" from="Exit Button" to="." method="_on_exit_button_pressed"]
