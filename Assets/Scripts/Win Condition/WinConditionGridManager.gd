@@ -80,7 +80,6 @@ func create_puzzle(data):
 	
 	# Sets the Amount of Cables Needed
 	cables_needed = (house_locs.size() + 1) * 3
-	print(cables_needed)
 
 # Updates a tile's texture and data
 func update_tile(x, y):
@@ -116,10 +115,13 @@ func check_solution():
 			var ydir = cardinal_directions[i].y
 			var coords = Vector2(current_tile.x_value + xdir, current_tile.y_value + ydir)
 			if coords.x < 0 || coords.x > grid_width-1 || coords.y < 0 || coords.y > grid_height-1:
-				print("cope")
 				continue
 			
-			if tiles[current_tile.x_value + xdir][current_tile.y_value + ydir].cable_value == 1:
+			var tempTile = tiles[current_tile.x_value + xdir][current_tile.y_value + ydir]
+			if tempTile.cable_value == 1:
+				if tempTile.cable_directions.find(Vector2(-xdir, -ydir)) == -1:
+					continue
+				
 				direction_to_ignore = Vector2(-xdir, -ydir)
 				current_tile = tiles[current_tile.x_value + xdir][current_tile.y_value + ydir]
 				break
@@ -147,6 +149,7 @@ func check_solution():
 						return
 						
 					direction_to_ignore = Vector2(-direction.x, -direction.y)
+					break
 		
 		# Checks if it found a house
 		if current_tile.is_building == true:
