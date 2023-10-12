@@ -74,12 +74,13 @@ func create_puzzle(data):
 	# Sets the House Tiles
 	var house_locs = data["house_locs"]
 	for i in house_locs.size():
-		var parsed_xy = house_locs[i].split("-")
+		var parsed_xy = house_locs[i].split(",")
 		tiles[int(parsed_xy[0])][int(parsed_xy[1])].change_texture(house_texture, 0)
 		tiles[int(parsed_xy[0])][int(parsed_xy[1])].silent_signal = true
 	
 	# Sets the Amount of Cables Needed
 	cables_needed = (house_locs.size() + 1) * 3
+	print(cables_needed)
 
 # Updates a tile's texture and data
 func update_tile(x, y):
