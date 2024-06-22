@@ -1,10 +1,8 @@
-res://Scenes/Objects/Win Condition/SCE_Win_Condition_Grid.tscn
+res://Scenes/Environments/sce_reactor_room.tscn
 res://Assets/Scripts/TaskManager.gd
 res://Assets/Materials/Objects/MAT_task1_disabled.tres
 res://Assets/Materials/Objects/MAT_task2_disabled.tres
-res://Assets/Scripts/Win Condition/WinConditionGridManager.gd
-res://Scenes/Environments/sce_reactor_room.tscn
 res://Scenes/Objects/Task 1/Task_1_Button.tscn
-res://Data/Shifts/Shift1.json
+res://Scenes/Objects/Win Condition/SCE_Win_Condition_Grid.tscn
 res://Scenes/Objects/Win Condition/SCE_Win_Condition_Tile.tscn
 res://Scenes/Objects/Win Condition/SCE_Win_Condition_UI.tscn
